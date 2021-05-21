@@ -2,19 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collision : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public GameObject OtherGameObject;
+  
     void Start()
     {
         
     }
-    //BATER NO INIMIGO E ELE MORRER
+    void Update()
+    {
+        
+    }
     void OnCollisionEnter2D(Collision2D Collision)
     {
         if (Collision.gameObject.tag == "Player")
         {
-            Destroy(OtherGameObject);
+           // Destroy(OtherGameObject,2);
+            Instantiate(OtherGameObject);
+            /*for (int i = 0; i< 5; i++)
+            {
+                Instantiate(OtherGameObject);
+            }*/
         }
     }
 }
